@@ -6,19 +6,17 @@ branchs:
     - master  #指定只有检测到master分支有变动时才执行任务
 stages:
 - deploy
-# jobs:
-#  include:
-#   - stage: test
-#     script:
-#     - ls
-#   -stage: deploy
-#    script:
-#     - npm version
 
-deploy:
-  provider: npm
-  email: 13436281755@163.com
-  api_key: "$NPM_TOKEN"
-  skip_cleanup: true
-  on:
-    all_branches: true
+jobs:
+  include:
+    # - stage: npm release
+      # if: tag IS present
+      node_js: "10"
+      script: ls
+      deploy:
+        provider: npm
+        email: "$EMAIL"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
+        on:
+          tags: true
