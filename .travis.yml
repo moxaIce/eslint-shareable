@@ -1,11 +1,6 @@
-language: node_js
+language: node_js   #前端工程所以是JavaScript，编译环境是node_js
 node_js:
- - "10"
-branchs: 
-  only: 
- - master
-script:
-- ls
-# - rm -rf node_modules 
-# - npm install
-# - npm pushlish
+- '10'   #指定node版本
+branchs:
+  only:
+  - master  #指定只有检测到master分支有变动时才执行任务
