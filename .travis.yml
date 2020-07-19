@@ -5,7 +5,6 @@ branchs:
   only:
   - master  #指定只有检测到master分支有变动时才执行任务
 stages:
- - master
  - name: deploy
 jobs:
  include:
