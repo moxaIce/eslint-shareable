@@ -3,22 +3,22 @@ node_js:
 - '10'   #指定node版本
 branchs:
   only:
-  - master  #指定只有检测到master分支有变动时才执行任务
+    - master  #指定只有检测到master分支有变动时才执行任务
 stages:
- - name: deploy
-jobs:
- include:
-  - stage: test
-    script:
-    - ls
-  -stage: deploy
-   script:
-    - npm version
+- deploy
+# jobs:
+#  include:
+#   - stage: test
+#     script:
+#     - ls
+#   -stage: deploy
+#    script:
+#     - npm version
 
-  deploy:
-    provider: npm
-    email: 13436281755@163.com
-    api_key: "$NPM_TOKEN"
-    skip_cleanup: true
-    on:
-      all_branches: true
+deploy:
+  provider: npm
+  email: 13436281755@163.com
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true
+  on:
+    all_branches: true
