@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+ - "10"
+branchs: 
+  only: 
+ - master
+script:
+- ls
+# - rm -rf node_modules 
+# - npm install
+# - npm pushlish
