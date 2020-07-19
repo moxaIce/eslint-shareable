@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-shareable-test",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "体验eslint shareable ",
   "main": "index.js",
   "scripts": {
